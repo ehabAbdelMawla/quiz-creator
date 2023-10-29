@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+// Media
+// Small phones
+$screen-tn-max: 450px;
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 596px;
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+// Tablets and small desktops
+$screen-lg-max: 992px;
+
+// Phone devices
+@mixin tn {
+  @media (max-width: #{$screen-tn-max}) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+// helpers
+@mixin centerChilds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Scroll bar Customization
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  transition: 0.5s;
+  background: rgba(
+    var(--scroll-bar-value),
+    var(--scroll-bar-value),
+    var(--scroll-bar-value),
+    0.15
+  );
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(
+    var(--scroll-bar-value-hover),
+    var(--scroll-bar-value-hover),
+    var(--scroll-bar-value-hover),
+    0.325
+  );
+}
+
+:root {
+  font-size: 18px;
+  scroll-behavior: smooth;
+
+  @include lg {
+    font-size: 18px;
+  }
+  @include md {
+    font-size: 16px;
+  }
+  @include sm {
+    font-size: 14px;
+  }
+}
+
+@mixin addBorder {
+  border: 1px solid #ddd;
+}
+
+button:not(.icon) {
+  span {
+    padding-inline-end: 10px;
+  }
+}

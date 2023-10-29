@@ -1,0 +1,90 @@
+.qiuz-form-container {
+  padding: 25px;
+  h3 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  form {
+    .form-control {
+      margin-block: 10px;
+      label {
+        &:not(.inline) {
+          display: block;
+        }
+        margin: 5px;
+      }
+      input {
+        width: min(100%, 750px);
+      }
+    }
+    .divider {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      margin: 20px;
+    }
+    .answers {
+      .question-answers-container {
+        position: relative;
+        padding-bottom: 60px;
+        .item {
+          position: relative;
+          margin: 10px;
+          padding-block: 20px;
+          .rm-answer {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+          }
+        }
+        .add-answer {
+          position: absolute;
+          right: 5px;
+          bottom: 5px;
+          margin: 0 !important;
+        }
+      }
+    }
+
+    .questions-array-container {
+      position: relative;
+      label {
+        &.title {
+          font-size: 1.25rem;
+        }
+      }
+      .questioins-list {
+        padding-bottom: 80px;
+        .question-item {
+          padding: 10px;
+          position: relative;
+          @include addBorder;
+          border-radius: 10px;
+          margin: 10px;
+          button {
+            &.rm-question {
+              margin: 10px;
+              position: absolute;
+              right: 10px;
+              top: 10px;
+            }
+          }
+        }
+      }
+      button {
+        &.add-question {
+          margin: 10px;
+          position: absolute;
+          right: 10px;
+          bottom: 10px;
+        }
+      }
+    }
+    .submition-container {
+      @include centerChilds;
+      .submit-btn {
+        width: min(100%, 200px);
+        margin-top: 25px;
+      }
+    }
+  }
+}
